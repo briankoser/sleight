@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Recipes</title>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700">
+    <style>
+        main a {
+            display: block;
+        }
+    </style>
+    
+    <link rel="apple-touch-icon-precomposed" href="/images/favicon-152.png">
+    <meta name="msapplication-TileColor" content="#ddd">
+    <meta name="msapplication-TileImage" content="/images/favicon-144.png">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            document.body.innerHTML = MarkFractions(document.body.innerHTML);
+            document.body.innerHTML = MarkSmallCaps(document.body.innerHTML);
+        });
+
+        function MarkFractions(text) {
+            var regex = /([\s>])([0-9]\/[0-9])(?=[\s<])/g;
+            return text.replace(regex, '$1<span class="fraction">$2</span>');
+        }
+
+        function MarkSmallCaps(text) {
+            var regex = /(<abbr>)(am|pm|ad|bc|[a-z]{4,})(<\/abbr>)/ig;
+            return text.replace(regex, '<abbr class="small-caps">$2$3');
+        }
+    </script>
+</head>
+<body>
+    <header role="banner">
+        <h1 class="site-title">Recipes</h1>
+    </header>
+
+    <main>
+        <a href="almond-green-beans.html">Almond Green Beans</a>
+        <a href="apple-oven-pancake.html">Apple Oven Pancakes</a>
+        <a href="april-fools-cupcakes.html">April Fools Cupcakes</a>
+        <a href="bachelor-cake.html">Bachelor Cake</a>
+        <a href="bacon-and-egg-casserole.html">Bacon and Egg Casserole</a>
+        <a href="bacon-and-tomato-cups.html">Bacon and Tomato Cups</a>
+        <a href="bacon-n-egg-bundles.html">Bacon n Egg Bundles</a>
+        <a href="bacon-wrapped-chicken.html">Bacon-Wrapped Chicken</a>
+        <a href="baconspinach-salad.html">Bacon-Spinach Salad</a>
+        <a href="baked-apples.html">Baked Apples</a>
+        <a href="baked-bbq-chicken.html">Baked BBQ Chicken</a>
+        <a href="baked-chicken-florida.html">Baked Chicken Florida</a>
+        <a href="baked-ditalini.html">Baked Ditalini</a>
+        <a href="baked-potato-soup.html">Baked Potato Soup</a>
+        <a href="baklava.html">Baklava</a>
+        <a href="baleadas.html">Baleadas</a>
+        <a href="banana-bread.html">Banana Bread</a>
+        <a href="bell-pepper-and-shrimp-soup.html">Bell Pepper and Shrimp Soup</a>
+        <a href="blueberry-citrus-bars.html">Blueberry Citrus Bars</a>
+        <a href="boxed-mac-and-cheese-that-doesnt-suck.html">Boxed Mac and Cheese That Doesn't Suck</a>
+        <a href="brians-mashed-potatoes.html">Brian's Mashed Potatoes</a>
+        <a href="brown-sugar-smokies.html">Brown Sugar Smokies</a>
+        <a href="butternut-squash-soup.html">Butternut Squash Soup</a>
+        <a href="candied-pecans.html">Candied Pecans</a>
+        <a href="caramel-apple-nut-bars.html">Caramel Apple Nut Bars</a>
+        <a href="caramel-chocolate-cakeflan.html">Caramel Chocolate Cakeflan</a>
+        <a href="carrot-souffle.html">Carrot Souffle</a>
+        <a href="cheese-ball.html">Cheese Ball</a>
+        <a href="cheese-cache-chicken.html">Cheese-Cache Chicken</a>
+        <a href="cheesy-chicken-and-rice-bake.html">Cheesy Chicken and Rice Bake</a>
+        <a href="cheesy-chicken-rollups.html">Cheesy Chicken Rollups</a>
+        <a href="cheesy-spinach-ravioli.html">Cheesy Spinach Ravioli</a>
+        <a href="chicken-and-fried-rice.html">Chicken and Fried Rice</a>
+        <a href="chicken-divan-crescent-ring.html">Chicken Divan Crescent Ring</a>
+        <a href="chicken-enchilada-casserole.html">Chicken Enchilada Casserole</a>
+        <a href="chicken-noodle-soup.html">Chicken Noodle Soup</a>
+        <a href="chocolate-dessert-cups.html">Chocolate Dessert Cups</a>
+        <a href="chocolate-eggwhite-cookies.html">Chocolate Eggwhite Cookies</a>
+        <a href="chocolateraspberry-triangles.html">Chocolate-Raspberry Triangles</a>
+        <a href="cookies-n-cream-pie.html">Cookies n Cream Pie</a>
+        <a href="corn-pudding.html">Corn Pudding</a>
+        <a href="crab-quiche.html">Crab Quiche</a>
+        <a href="crabstuffed-baked-potatoes.html">Crabstuffed Baked Potatoes</a>
+        <a href="cranberry-chicken.html">Cranberry Chicken</a>
+        <a href="cream-of-tomato-soup.html">Cream of Tomato Soup</a>
+        <a href="creamy-green-beans.html">Creamy Green Beans</a>
+        <a href="crockpot-beef-soup.html">Crockpot Beef Soup</a>
+        <a href="crockpot-caribbean-spiced-ribs.html">Crockpot Caribbean Spiced Ribs</a>
+        <a href="crockpot-chicken-continental.html">Crockpot Chicken Continental</a>
+        <a href="crockpot-mocha.html">Crockpot Mocha</a>
+        <a href="crockpot-orange-chicken.html">Crockpot Orange Chicken</a>
+        <a href="curried-chicken.html">Curried Chicken</a>
+        <a href="easy-bbq-chicken.html">Easy BBQ Chicken</a>
+        <a href="easy-chicken-and-biscuits.html">Easy Chicken and Biscuits</a>
+        <a href="easy-chowder.html">Easy Chowder</a>
+        <a href="easy-italian-bagels.html">Easy Italian Bagels</a>
+        <a href="easy-souffle.html">Easy Souffle</a>
+        <a href="easy-tuna-pasta.html">Easy Tuna Pasta</a>
+        <a href="egg-potato-and-cheese-casserole.html">Egg Potato and Cheese Casserole</a>
+        <a href="extragood-cream-soup.html">Extra-Good Cream Soup</a>
+        <a href="fabulous-barbecue-shrimp.html">Fabulous Barbecue Shrimp</a>
+        <a href="festive-peppermint-marshmallows.html">Festive Peppermint Marshmallows</a>
+        <a href="fish-au-gratin.html">Fish Au Gratin</a>
+        <a href="fivealive-punch.html">Five Alive Punch</a>
+        <a href="french-bread-tomato-soup.html">French Bread Tomato Soup</a>
+        <a href="french-toast-in-a-cup.html">French Toast in a Cup</a>
+        <a href="fresh-berry-salad.html">Fresh Berry Salad</a>
+        <a href="fruit-smoothies.html">Fruit Smoothies</a>
+        <a href="garlic-chicken.html">Garlic Chicken</a>
+        <a href="ginger-ale-pot-roast.html">Ginger Ale Pot Roast</a>
+        <a href="gingersnaps.html">Ginger Snaps</a>
+        <a href="golden-fried-fish.html">Golden Fried Fish</a>
+        <a href="green-beans-in-bunches.html">Green Beans in Bunches</a>
+        <a href="herbed-butter.html">Herbed Butter</a>
+        <a href="indoor-smores.html">Indoor S'mores</a>
+        <a href="italian-peas.html">Italian Peas</a>
+        <a href="lemon-bars.html">Lemon Bars</a>
+        <a href="lemonade-sorbet.html">Lemonade Sorbet</a>
+        <a href="lemonpepper-tilapia.html">Lemon-pepper Tilapia</a>
+        <a href="meat-and-potato-quiche.html">Meat and Potato Quiche</a>
+        <a href="meaty-muffins.html">Meaty Muffins</a>
+        <a href="melissa-kosers-laundry-detergent.html">Melissa Koser's Laundry Detergent</a>
+        <a href="melissas-cream-cheese-danish.html">Melissa's Cream Cheese Danish</a>
+        <a href="men-love-this-steak.html">Men Love this Steak</a>
+        <a href="mennonitestyle-chili.html">Mennonite-Style Chili</a>
+        <a href="mini-cheesecakes.html">Mini Cheesesteaks</a>
+        <a href="mom-binzels-lasagna.html">Mom Binzel's Lasagna</a>
+        <a href="mom-binzels-turkey-stuffing.html">Mom Binzel's Turkey Stuffing</a>
+        <a href="mom-kosers-baked-squash.html">Mom Koser's Baked Squash</a>
+        <a href="mom-kosers-basic-white-sauce.html">Mom Koser's Basic White Sauce</a>
+        <a href="mom-kosers-bean-soup.html">Mom Koser's Bean Soup</a>
+        <a href="mom-kosers-cheese-danish.html">Mom Koser's Cheese Danish</a>
+        <a href="mom-kosers-chocolate-clay-and-roses.html">Mom Koser's Chocolate Clay and Roses</a>
+        <a href="mom-kosers-cranberry-pineapple-salad.html">Mom Koser's Cranberry Pineapple Salad</a>
+        <a href="mom-kosers-crockpot-beef.html">Mom Koser's Crockpot Beef</a>
+        <a href="mom-kosers-foolproof-pizza-dough.html">Mom Koser's Foolproof Pizza Dough</a>
+        <a href="mom-kosers-german-chocolate-cake-cookies.html">Mom Koser's German Chocolate Cake Cookies</a>
+        <a href="mom-kosers-german-dumplings.html">Mom Koser's German Dumplings</a>
+        <a href="mom-kosers-golden-parmesan-potatoes.html">Mom Koser's Golden Parmesan Potatoes</a>
+        <a href="mom-kosers-gooey-goop.html">Mom Koser's Gooey Goop</a>
+        <a href="mom-kosers-grilled-chicken.html">Mom Koser's Grilled Chicken</a>
+        <a href="mom-kosers-hashbrown-bake-for-breakfast.html">Mom Koser's Hashbrown Bake for Breakfast</a>
+        <a href="mom-kosers-hungarian-ghoulash.html">Mom Koser's Hungarian Ghoulash</a>
+        <a href="mom-kosers-overnight-brunch.html">Mom Koser's Overnight Brunch</a>
+        <a href="mom-kosers-play-clay.html">Mom Koser's Play Clay</a>
+        <a href="mom-kosers-potato-soup.html">Mom Koser's Potato Soup</a>
+        <a href="mom-kosers-refrigerator-rolls.html">Mom Koser's Refrigerator Rolls</a>
+        <a href="mom-kosers-spinach-dip-in-a-bread-bowl.html">Mom Koser's Spinach Dip in a Bread Bowl</a>
+        <a href="mom-kosers-taco-dip.html">Mom Koser's Taco Dip</a>
+        <a href="mom-kosers-tapioca-pudding.html">Mom Koser's Tapioca Pudding</a>
+        <a href="no-peek-chicken.html">No-Peek Chicken</a>
+        <a href="orange-carrot-soup.html">Orange Carrot Soup</a>
+        <a href="orange-marmalade-chops.html">Orange Marmalade</a>
+        <a href="ovenfried-sesame-chicken.html">Overn-fried Sesame Chicken</a>
+        <a href="overnight-breakfast-casserole.html">Overnight Breakfast Casserole</a>
+        <a href="parmesan-corn.html">Parmesan Corn</a>
+        <a href="parmesan-peas.html">Parmesan Peas</a>
+        <a href="pasta-and-bean-soup.html">Pasta and Bean Soup</a>
+        <a href="peach-smoothies.html">Peach Smoothies</a>
+        <a href="peanut-butter-and-chocolate-cheese-ball.html">Peanut Butter and Chocolate Cheese Ball</a>
+        <a href="peanut-butter-popcorn.html">Peanut Butter Popcorn</a>
+        <a href="pecan-tilapia.html">Pecan Tilapia</a>
+        <a href="pork-chops-obrien.html">Pork Chops O'Brien</a>
+        <a href="pork-chops-with-peaches.html">Pork Chops with Peaches</a>
+        <a href="potato-chowder.html">Potato Chowder</a>
+        <a href="pribyl-pork-chops.html">Pribyl Pork Chops</a>
+        <a href="pumpkin-nut-bread.html">Pumpkin Nut Bread</a>
+        <a href="raspberry-cheese-ball.html">Raspberry Cheese Ball</a>
+        <a href="raspberry-sorbet.html">Raspberry Sorbet</a>
+        <a href="rigatoni-with-italian-chicken.html">Rigatoni with Italian Chicken</a>
+        <a href="rivel-chicken-soup.html">Rivel Chicken Soup</a>
+        <a href="rocky-road-pie.html">Rocky Road Pie</a>
+        <a href="sausage-cornbread.html">Sausage Cornbread</a>
+        <a href="sausaparataters.html">Sausasparataters</a>
+        <a href="scalloped-potatoes.html">Scalloped Potatoes</a>
+        <a href="scrumptious-chocolate-mousse.html">Scrumptious Chocolate Mousse</a>
+        <a href="sesame-buttered-broccoli.html">Sesame Buttered Broccoli</a>
+        <a href="sesame-seed-green-beans.html">Sesame Seed Green Beans</a>
+        <a href="shrimp-n-pasta.html">Shrimp n Pasta</a>
+        <a href="shrimp-scampi.html">Shrimp Scampi</a>
+        <a href="simply-swordfish.html">Simply Swordfish</a>
+        <a href="skillet-seafood-bisque.html">Skillet Seafood Bisque</a>
+        <a href="souper-enchiladas.html">Souper Enchiladas</a>
+        <a href="south-african-milktart.html">South African Milktart</a>
+        <a href="spaghetti-pie.html">Spaghetti Pie</a>
+        <a href="spiced-shrimp.html">Spiced Shrimp</a>
+        <a href="spinach-pasta-and-tuna.html">Spinach Pasta and Tuna</a>
+        <a href="strawberry-fudge-truffles.html">Strawberry Fudge Truffles</a>
+        <a href="strawberry-jello-salad.html">Strawberry Jello Salad</a>
+        <a href="strawberry-stuffed-french-toast.html">Strawberry Stuffed French Toast</a>
+        <a href="stuffed-bell-peppers.html">Stuffed Bell Peppers</a>
+        <a href="swiss-cake-roll.html">Swiss Cake Roll</a>
+        <a href="swiss-chicken.html">Swiss Chicken</a>
+        <a href="toffee-bars.html">Toffee Bars</a>
+        <a href="toffee-squares.html">Toffee Squares</a>
+        <a href="toffee.html">Toffee</a>
+        <a href="tortilla-soup.html">Tortilla Soup</a>
+        <a href="turtle-cake.html">Turtle Cake</a>
+        <a href="vegetable-beef-soup.html">Vegetable Beef Soup</a>
+        <a href="woo-your-man-steak.html">Woo Your Man Steak</a>
+        <a href="ziplock-omelettes.html">Ziplock Omelettes</a>
+    </main>
+    
+    <footer role="contentinfo">
+        <small>
+            <!--Creative Commons stuff. -->
+            Recipes compiled by Melissa Koser. Website created by <a href="http://briankoser.com">Brian Koser</a>.
+        </small>
+    </footer>
+</body>
+</html>

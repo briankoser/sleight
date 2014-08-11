@@ -1,0 +1,56 @@
+- use points for font size
+- set font color to black
+- remove margins
+- display title, alt, cite?
+- diplay href
+#Content a[href]:after {
+  content: " [" attr(href) "] ";
+  word-wrap: break-word;
+}
+#Content a[href^="#"]:after,
+#Content a[href^="tel"]:after,
+#Content a[href^="mailto"]:after,
+#Content a[href^="javascript"]:after {
+  content: "";
+}
+
+- remove nav
+- remove social media links
+- keep breadcrumbs, but don't expand links
+#Bread a:link,
+#Bread a:visited {
+  text-decoration: underline;
+  color: #000;
+}
+#Bread {
+  color: #000;
+  font-size: 6pt;
+}
+#Bread > a:after {
+  content: "";
+}
+
+- page-break-before, page-break-after, page-break-inside
+- hide videos, audio, canvas
+- don't scale images to 100%
+- widows and orphans
+p {
+  orphans: 3;
+  widows: 2;
+}
+
+- QR code
+header::before {
+  content: url(http://chart.apis.google.com/chart?chs=120x120&cht=qr&chl=http%3A%2F%2Fbriankoser.com);
+}
+
+- margins
+@page {
+  @bottom-left {
+    content: "Creative Commons";
+  }
+  @bottom-right {
+    counter-increment: page;
+    content: "Page " counter(page);
+  }
+}
