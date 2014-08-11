@@ -1,20 +1,5 @@
-1. Copy files/folders to _output
-2. Pretty URLs
-3. Convert single JSON file with corresponding single Handlebars template to HTML
-4. Convert folder of JSON files with corresponding single Handlebars template to HTML
-5. Give Handlebars access to JSON "in scope"; e.g. create a file which lists the JSON files in the folder
-6. Convert Markdown to HTML
-7. Nested templates
-8. Add JS and CSS references automatically
-
 - Use Gulp for combining, minifying, linting, pushing to server rather than baking it into Sleight
 - Generate default folders/templates when initializing a project?
-
-Write in Ruby?
- - kramdown is Ruby
-Write in C#?
- - know best
-
 
 
 Folder Tree:

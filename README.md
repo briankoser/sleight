@@ -5,7 +5,7 @@ A lean static site builder
 
 To do:
 
-- [ ] Copy files/folders to _output
+- [x] Copy files/folders to _output
 - [ ] Pretty URLs
 - [ ] Convert single JSON file with corresponding single Handlebars template to HTML
 - [ ] Convert folder of JSON files with corresponding single Handlebars template to HTML
