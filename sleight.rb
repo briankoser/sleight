@@ -1,45 +1,35 @@
 require 'fileutils'
 require 'find'
 
+def output_resources(output, extension)
+  src = File.join('.', 'site', '_resources')
+  dest = File.join(output, extension)
+
+  Find.find(src) do |file|
+    # check for directory
+    
+    next if File.directory?(file)
+    next if File.extname(file) != '.' + extension
+    
+    puts file
+    
+    FileUtils.mkdir_p dest
+    FileUtils.cp file, dest
+  end
+end
+
 # Remove existing output
-FileUtils.rm_r './site/_output/'
-
-resourcesSource = './site/_resources/'
-
-# Find.find(src) do |path|
-    # unless path == src
-        # puts path
-    # end
-# end
+output = File.join('.', 'site', '_output')
+FileUtils.rm_r output if File.exists?(output)
 
 # Move templates to output
-src = './site/_templates/.'
-dest = './site/_output'
-FileUtils.cp_r src, dest
+src = File.join('.', 'site', '_templates')
+FileUtils.cp_r src, output
 
 # Move images to output
-imgSource = './site/img/'
-imgDestination = './site/_output/img/'
-FileUtils.cp_r imgSource, imgDestination
+img_src = File.join('.', 'site', 'img')
+img_dest = File.join(output, 'img')
+FileUtils.cp_r img_src, img_dest
 
-# Move css to output
-cssDestination = './site/_output/css/'
-Find.find(resourcesSource) do |file|
-    # check for directory
-    
-    next if File.extname(file) != '.css'
-    
-    FileUtils.mkdir_p cssDestination
-    FileUtils.cp file, cssDestination
-end
-
-# Move js to output
-jsDestination = './site/_output/js/'
-Find.find(resourcesSource) do |file|
-    # check for directory
-    
-    next if File.extname(file) != '.js'
-    
-    FileUtils.mkdir_p jsDestination
-    FileUtils.cp file, jsDestination
-end
+output_resources(output, 'css')
+# output_resources('js')
