@@ -1,7 +1,7 @@
 sleight
 =======
 
-A lean static site builder
+A lean, opinionated static site builder.
 
 To do:
 
