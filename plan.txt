@@ -18,10 +18,10 @@ _resources
 
 _templates
  > recipes
-   > _default.handlebars # specifies that _site.handlebars is its master template
+   > _default.handlebars # specifies that _default.handlebars is its master template
    > index.handlebars # has access to JSON data in _data/recipes
  > _default.handlebars
- > about.handlebars # specifies that _site.handlebars is its master template
+ > about.handlebars # specifies that _default.handlebars is its master template
 
 img
  > image.png
