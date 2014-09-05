@@ -29,26 +29,27 @@ def output_resources(output, extension)
   end
 end
 
-# Remove existing output so we can create the site from scratch
-output = File.join('.', 'site', '_output')
-FileUtils.rm_r output if File.exists?(output)
-FileUtils.mkdir_p output
+# Set directory locations
+site_dir = File.join '.', 'site'
+output_dir = File.join site_dir, '_output'
+img_dir_src = File.join site_dir, 'img'
+img_dir_dest = File.join output_dir, 'img'
+recipes_dir_dest = File.join output_dir, 'recipes'
+recipes_template_path = File.join site_dir, '_templates', 'recipes', '_default.mustache'
+recipes_json_path = site_dir, '_data', 'recipes'
 
-# # Move templates to output
-# src = File.join('.', 'site', '_templates')
-# FileUtils.cp_r src, output
+# Remove existing output so we can create the site from scratch
+FileUtils.rm_r output_dir if File.exists?(output_dir)
+FileUtils.mkdir_p output_dir
 
 # Move images to output
-img_src = File.join('.', 'site', 'img')
-img_dest = File.join(output, 'img')
-FileUtils.cp_r img_src, img_dest
+FileUtils.cp_r img_dir_src, img_dir_dest
 
-# output_resources(output, 'css')
-# output_resources(output, 'js')
+# Move CSS and JS to output
+# output_resources(output_dir, 'css')
+# output_resources(output_dir, 'js')
 
-
-recipes_dest = File.join(output, 'recipes')
-FileUtils.mkdir_p recipes_dest
-
-Mustache.template_file = File.join('.', 'site', '_templates', 'recipes', '_default.mustache')
-create_html File.join('.', 'site', '_data', 'recipes', 'boxed-mac-and-cheese-that-doesnt-suck.json'), recipes_dest, 'mac.html'
+# Move recipes to output
+FileUtils.mkdir_p recipes_dir_dest
+Mustache.template_file = recipes_template_path
+create_html File.join(recipes_json_path, 'boxed-mac-and-cheese-that-doesnt-suck.json'), recipes_dir_dest, 'mac.html'
