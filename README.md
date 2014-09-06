@@ -7,9 +7,9 @@ To do:
 
 - [ ] Combine templates with data
   - Pretty URLs
-  - Preserve the directory tree  
-  - [ ] Convert single JSON file with corresponding single Handlebars template to HTML
-  - [ ] Convert folder of JSON files with corresponding single Handlebars template to HTML
+  - Preserve the directory tree
+  - [x] Convert single JSON file with corresponding single Handlebars template to HTML
+  - [x] Convert folder of JSON files with corresponding single Handlebars template to HTML
   - [ ] Give Handlebars access to JSON "in scope"; e.g. create a file which lists the JSON files in the folder
   - [ ] Combine nested templates
 - [ ] Copy CSS, JS to resources
@@ -19,3 +19,4 @@ To do:
 - [ ] Add JS and CSS references automatically based on original location
 - [ ] Copy all other files to _output preserving directory tree
   - [ ] Pretty URLs for HTML files
+- [ ] Make generic by removing recipe site-specific data
