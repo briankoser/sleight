@@ -9,6 +9,17 @@ def create_html(jsonFile, destination, htmlFileName)
     File.open(File.join(destination, htmlFileName), 'w') {|f| f.write(Mustache.render(data)) }
 end
 
+def create_recipes(template, src, dest)
+    FileUtils.mkdir_p dest
+    Mustache.template_file = template
+    
+    Dir.foreach(src) do |item|
+      next if item == '.' or item == '..'
+      file_name = File.basename(item, '.json')
+      create_html File.join(src, item), dest, file_name + '.html'
+    end
+end
+
 def output_resources(output, extension)
   src = File.join('.', 'site', '_resources')
   dest = File.join(output, extension)
@@ -30,13 +41,13 @@ def output_resources(output, extension)
 end
 
 # Set directory locations
-site_dir = File.join '.', 'site'
-output_dir = File.join site_dir, '_output'
-img_dir_src = File.join site_dir, 'img'
-img_dir_dest = File.join output_dir, 'img'
-recipes_dir_dest = File.join output_dir, 'recipes'
+site_dir              = File.join '.', 'site'
+output_dir            = File.join site_dir, '_output'
+img_dir_src           = File.join site_dir, 'img'
+img_dir_dest          = File.join output_dir, 'img'
+recipes_dir_dest      = File.join output_dir, 'recipes'
 recipes_template_path = File.join site_dir, '_templates', 'recipes', '_default.mustache'
-recipes_json_path = site_dir, '_data', 'recipes'
+recipes_json_path     = File.join site_dir, '_data', 'recipes'
 
 # Remove existing output so we can create the site from scratch
 FileUtils.rm_r output_dir if File.exists?(output_dir)
@@ -50,6 +61,4 @@ FileUtils.cp_r img_dir_src, img_dir_dest
 # output_resources(output_dir, 'js')
 
 # Move recipes to output
-FileUtils.mkdir_p recipes_dir_dest
-Mustache.template_file = recipes_template_path
-create_html File.join(recipes_json_path, 'boxed-mac-and-cheese-that-doesnt-suck.json'), recipes_dir_dest, 'mac.html'
+create_recipes(recipes_template_path, recipes_json_path, recipes_dir_dest)
