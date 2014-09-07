@@ -10,13 +10,14 @@ def create_html(jsonFile, destination, htmlFileName)
 end
 
 def create_recipes(template, src, dest)
-    FileUtils.mkdir_p dest
     Mustache.template_file = template
     
     Dir.foreach(src) do |item|
       next if item == '.' or item == '..'
-      file_name = File.basename(item, '.json')
-      create_html File.join(src, item), dest, file_name + '.html'
+      recipe_name = File.basename(item, '.json')
+      recipe_dest = File.join(dest, recipe_name)
+      FileUtils.mkdir_p recipe_dest
+      create_html File.join(src, item), recipe_dest, 'index.html'
     end
 end
 
