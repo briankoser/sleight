@@ -29,11 +29,9 @@ fs.readdir(from, function(err, files) {
         fs.readFile(file, function(err, fileContents) {
             if (err) throw err;
             
-            var json = recipeToJson(fileContents.toString());
-            var fileName = path.basename(file, '.txt')
-                .replace(/[^A-Za-z\- ]/g, '')
-                .replace(/ /g, '-')
-                .toLowerCase() + '.json';
+            var urlName = getURLName(path.basename(file, '.txt'));
+            var fileName = urlName + '.json';
+            var json = recipeToJson(fileContents.toString(), urlName);
             
             fs.writeFile(path.join(to, fileName), JSON.stringify(json));
         });
@@ -41,11 +39,17 @@ fs.readdir(from, function(err, files) {
 });
 
 
+function getURLName(fullName) {
+    return fullName.replace(/[^A-Za-z\- ]/g, '')
+                   .replace(/ /g, '-')
+                   .toLowerCase();
+}
+
 function isTextFile(file){
     return /\.txt/.test(path.extname(file));
 }
 
-function recipeToJson(src) {
+function recipeToJson(src, urlName) {
     if (src == '') return src;
     
     var json = {};
@@ -100,6 +104,11 @@ function recipeToJson(src) {
         .filter(function(n){ return n.trim() != '' });
     directions.forEach(function(item, index){ directions[index] = item.trim()});
     json['instructions'] = directions;
+    
+    if (urlName != undefined)
+    {
+        json['urlname'] = urlName;
+    }
     
     return json;
 }
