@@ -35,3 +35,4 @@ build/
 
 ## Specific to Sleight
 site/_output
+site/_data/recipes/
