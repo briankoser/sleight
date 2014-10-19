@@ -56,11 +56,16 @@ function recipeToJson(src, urlName) {
     
     json['datemodified'] = new Date();
     
-    var name = src.match(/(Name: )([A-Za-z0-9&' ]+)/);
+    var name = src.match(/(Name: )([A-Za-z0-9&'\- ]+)/);
     if (name != undefined)
     {
         json['name'] = name[2];
-        }
+    }
+    
+    if (urlName != undefined)
+    {
+        json['urlname'] = urlName;
+    }
     
     var author = src.match(/(Author: )([A-Za-z0-9 ]+)/);
     if (author != undefined)
@@ -104,11 +109,6 @@ function recipeToJson(src, urlName) {
         .filter(function(n){ return n.trim() != '' });
     directions.forEach(function(item, index){ directions[index] = item.trim()});
     json['instructions'] = directions;
-    
-    if (urlName != undefined)
-    {
-        json['urlname'] = urlName;
-    }
     
     return json;
 }
