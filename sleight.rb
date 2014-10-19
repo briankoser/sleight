@@ -27,7 +27,7 @@ def create_recipe_list(file_template_dir, recipes)
                 next if item == '.' or item == '..'
                 json_file = JSON.parse(File.read(File.join(recipes, item)))
                 recipe = list_template.gsub '{{name}}', json_file['name']
-                # recipe.gsub! '{{url}}', json_file['url']
+                recipe.gsub! '{{url}}', json_file['urlname'] + '/'
                 recipe_links = recipe_links + recipe + "\n"
             end
             
@@ -45,7 +45,7 @@ def create_recipe_list(file_template_dir, recipes)
         end
     end
     
-    puts file_template
+    File.open(file_template_dir, 'w') {|f| f.write(file_template.join) }
 end
 
 def create_recipes(template, src, dest)
