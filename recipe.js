@@ -16,7 +16,7 @@ var fs = require('fs'),
 // });
 
 var from = 'C:\\Users\\Brian\\Dropbox\\Shared\\Brian-Melissa Shared\\MelissaRecipes',
-    to = 'C:\\Users\\Brian\\Documents\\GitHub\\recipes-punch\\contents\\recipes';
+    to = 'C:\\Users\\Brian\\Documents\\GitHub\\sleight\\site\\_data\\recipes';
 
 fs.readdir(from, function(err, files) {
     if(err) throw err;
