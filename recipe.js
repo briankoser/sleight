@@ -73,13 +73,13 @@ function recipeToJson(src, urlName) {
         json['author'] = author[2];
     }
     
-    var comments = src.match(/(Comments: )([A-Za-z0-9 ]+)/);
+    var comments = src.match(/(Comments: )(.+)/);
     if (comments != undefined)
     {
         json['comments'] = comments[2];
     }
     
-    var yield = src.match(/(Yield: )([A-Za-z0-9\- ]+)/);
+    var yield = src.match(/(Yield: )([A-Za-z0-9\-" ]+)/);
     if (yield != undefined)
     {
         json['yield'] = yield[2];
