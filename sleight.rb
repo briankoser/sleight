@@ -61,23 +61,17 @@ def create_recipes(template, src, dest)
 end
 
 def output_resources(output, extension)
-  src = File.join('.', 'site', '_resources')
-  dest = File.join(output, extension)
-
-  Find.find(src) do |file|
-    next if File.directory?(file)
-    next if File.extname(file) != '.' + extension
+    src = File.join('.', 'site', '_resources')
+    search = File.join(src, '**', '*.' + extension)
+    dest = File.join(output, extension)
     
-    # puts file
-    # file.split(File::Separator).each {|token| puts token}
-    
-    # todo
-    # 1. move to temp folder
-    # 2. rename
-    # 3. move to final destination
-    FileUtils.mkdir_p dest
-    FileUtils.cp file, dest
-  end
+    Dir.glob(search) do |file|
+        next if File.directory?(file)
+        
+        file_name = file.gsub(src, '').split(File::Separator).join('.').sub('.', '')
+        FileUtils.mkdir_p dest
+        FileUtils.cp file, File.join(dest, file_name)
+    end
 end
 
 # Set directory locations
@@ -99,8 +93,8 @@ FileUtils.mkdir_p output_dir
 FileUtils.cp_r img_dir_src, img_dir_dest
 
 # Move CSS and JS to output
-# output_resources(output_dir, 'css')
-# output_resources(output_dir, 'js')
+output_resources(output_dir, 'css')
+output_resources(output_dir, 'js')
 
 # Move recipes to output
 create_recipes(recipes_template_path, recipes_json_path, recipes_dir_dest)
