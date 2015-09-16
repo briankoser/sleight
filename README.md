@@ -19,4 +19,10 @@ To do:
 - [ ] Add JS and CSS references automatically based on original location
 - [ ] Copy all other files to _output preserving directory tree
   - [ ] Pretty URLs for HTML files
+- [ ] span with class around special abbreviations
+- [ ] span with class around fractions
+- [ ] smartypants?
+- [ ] Implement as gulp plugin so I can also combine CSS, combine JS, minify PNGs, lint, remove BOM, live reload
+- [ ] sitemap
+- [ ] rss/atom
 - [ ] Make generic by removing recipe site-specific data
