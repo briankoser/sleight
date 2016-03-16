@@ -56,7 +56,7 @@ function recipeToJson(src, urlName) {
     
     json['datemodified'] = new Date();
     
-    var name = src.match(/(Name: )([A-Za-z0-9&'\- ]+)/);
+    var name = src.match(/(Name: )([A-Za-z0-9&'\-, ]+)/);
     if (name != undefined)
     {
         json['name'] = name[2];
